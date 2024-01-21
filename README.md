@@ -9,7 +9,7 @@ The project is a backend project written in Flask. There is a database that has 
  
 1. With Flask, the necessary codes in the backend were written in the database.py file and connected to the database.
  
- 2.The Docker container has been created and the necessary libraries have been added in the requriments.txt file.
+2. The Docker container has been created and the necessary libraries have been added in the requriments.txt file.
  
 3. The created container was dumped into the docker hub environment.
  
@@ -19,7 +19,7 @@ The project is a backend project written in Flask. There is a database that has 
  
 6. Necessary adjustments have been made to the YAML file named deployement.yaml.
  
- 7.Deployement has been implemented into Kubernetes.
+7. Deployement has been implemented into Kubernetes.
  
 8.For the test of the application, the pods name was looked at and the loadbalancer IP was found and it started broadcasting to the outside world from port 5000.
  
