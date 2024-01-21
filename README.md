@@ -1,4 +1,4 @@
-# RatioAPI - Kubernetes Deployment
+# RatioAPI Backend Project
  
 This project includes a Flask and a Swagger UI-based API based on SQLAlchemy that are used to view and add user data. It includes the ability to write CSV files to the database created with SQLite and read this data.
  
