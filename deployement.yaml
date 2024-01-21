@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ratio-api
+  namespace: default
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ratio-api
+  template:
+    metadata:
+      labels:
+        app: ratio-api
+    spec:
+      containers:
+        - name: ratio-api
+          resources:
+            requests:
+              memory: "100m"
+              cpu: "100m"
+            limits:
+              memory: "2G"
+              cpu: "1"
+          image: ardapeker/ratioapi:latest
+          workingDir: /usr/src/app/
+          command: ["python", "database.py"]
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ratio-api-service
+  namespace: default
+spec:
+  selector:
+    app: ratio-api
+  ports:
+    - port: 5000
+      targetPort: 5000
+  type: LoadBalancer
